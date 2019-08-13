@@ -10,7 +10,8 @@ $ingresar="INSERT INTO Hortaliza VALUES ('$nombre','$tipo_de_cultivo','$costo_po
 $ejecutar= mysqli_query($conn, $ingresar);
 
  if(!$ejecutar){
-     echo 'Hubo un error';
+     echo 'Hubo un error'
+      . "<br><a href='formhortaliza.html'>Volver</a>";
  }else{
      echo "Ingreso exitoso, puedes:"
      . "<br><a href='formhortaliza.html'>Ingresar otra hortaliza</a>"
