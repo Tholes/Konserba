@@ -13,10 +13,11 @@ $ingresar="INSERT INTO Encargo VALUES ('$número_de_orden','$fecha','$valor','$g
 $ejecutar= mysqli_query($conn, $ingresar);
 
  if(!$ejecutar){
-     echo 'Hubo un error';
+     echo 'Hubo un error'
+      . "<br><a href='encargo.php'>Volver</a>";
  }else{
      echo "Ingreso exitoso, puedes:"
-     . "<br><a href='formencargo.html'>Ingresar otro encargo</a>"
+     . "<br><a href='encargo.php'>Ingresar otro encargo</a>"
             ;
  }
 ?>
