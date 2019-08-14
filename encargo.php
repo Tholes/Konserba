@@ -22,7 +22,7 @@
                     <br>
                     <h2>Hortaliza:</h2>
                     <select name='hortaliza'>
-                        <option value=NULL></option>
+                        <option ></option>
                         <?php
                         require('conexion.php');
                         $aux=NULL;
@@ -37,7 +37,7 @@
                     <br>
                     <h2>Fruta:</h2>
                     <select name ='fruta'>
-                        <option  value=NULL></option>
+                        <option></option>
                         <?php
                         require('conexion.php');
                         $aux=NULL;
