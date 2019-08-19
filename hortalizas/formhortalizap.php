@@ -1,5 +1,5 @@
 <?php
-require('conexion.php');
+require('../conexion/conexion.php');
 
 $nombre=$_POST['nombre'];
 $costo_por_unidad=$_POST['costo_por_unidad'];

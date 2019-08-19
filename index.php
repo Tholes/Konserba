@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+<?php include("includes/header.html") ?>
+<?php include("menu.html") ?>
     <body>
         <h1>
             <center>Aquí se mostrarán los formularios y las consultas.</center>
@@ -25,4 +20,5 @@
             <center>Juan Fernando Dederlé Baena</center>
         </h4>
     </body>
-</html>
+
+<?php include("includes/footer.html") ?>
