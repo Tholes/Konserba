@@ -11,10 +11,10 @@ $ejecutar= mysqli_query($conn, $ingresar);
 
  if(!$ejecutar){
      echo 'Hubo un error '
-         ."<br><a href='formhortaliza.html'>Volver</a>";
+         ."<br><a href='./formhortaliza.php'>Volver</a>";
  }else{
      echo "Ingreso exitoso, puedes:"
-     . "<br><a href='formhortaliza.html'>Ingresar otra hortaliza</a>"
+     . "<br><a href='./formhortaliza.php'>Ingresar otra hortaliza</a>"
             ;
  }
 ?>

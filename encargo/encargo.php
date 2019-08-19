@@ -29,11 +29,11 @@
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-8 col-form-label">Número del encargo: </label>
                         <div class="col-sm-10">
-                            <input type="number" name="número_de_orden" placeholder="número encargo...">
+                            <input type="number" name="numero_de_orden" placeholder="número encargo...">
                         </div>
                         </div>
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-10 col-form-label">Fecha en la que se hizo el encargo: </label>
+                        <label for="inputEmail3" class="col-sm-10 col-form-label">Fecha de encargo: </label>
                         <div class="col-sm-10">
                             <input type="date" name="fecha" placeholder="dd/mm/yyyy">
                         </div>
@@ -82,5 +82,42 @@
                     </div>
                 </div>
             </form>
+            <div class = "col-md-100">
+    <table class = "table table-borderd">
+        <thead>
+            <tr>
+                <th>Numero del encargo</th>
+                <th>Fecha de encargo</th>
+                <th>Valor</th>
+                <th>Fruta</th>
+                <th>Hortaliza</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            require('../conexion/conexion.php');
+            $query = "SELECT * FROM encargo";
+            $result = mysqli_query($conn,$query);
+            
+            while($row = mysqli_fetch_array($result)){ ?>
+                <tr>
+                    <td><?php echo $row['numero_de_orden'] ?></td>
+                    <td><?php echo $row['fecha'] ?></td>
+                    <td><?php echo $row['valor'] ?></td>
+                    <td><?php echo $row['fruta'] ?></td>
+                    <td><?php echo $row['hortaliza'] ?></td>
+                    <td>
+                        <a href="./borrarencargo.php?numero_de_orden= <?php echo $row['numero_de_orden']?>" class = "btn btn-danger">
+                            <i class = "fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            <?php  } ?>
+
+        </tbody>
+    </table>
+</div>
+
 
 <?php include("../includes/footer.html") ?>

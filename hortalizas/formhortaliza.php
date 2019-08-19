@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php include("../includes/header.html") ?>
-
+  
     <body>
     <ul class="nav">
             <li class="nav nav-pills">
@@ -17,7 +17,7 @@
                 <a class="nav-link" href="../encargo/encargo.php" target="info"><h4>Solicitar encargo</h4></a>
             </li>
         </ul>
-            <div class="col-6 px-6">
+            <div class="col-5 px-6">
                 <div class="card">
                     <div class="card-header">
                         Insertar hortaliza
@@ -33,7 +33,7 @@
             </div>
         </div>
   <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-8 col-form-label">Costo por kilo: </label>
+    <label for="inputEmail3" class="col-sm-8 col-form-label">Costo por unidad: </label>
         <div class="col-sm-10">
             <input type="number" name="costo_por_unidad" placeholder="Costo">
         </div>
@@ -63,7 +63,43 @@
     </div>
   </div>
   </div>
+    </form>
+    </div>
+</body>
 
-</form>
+<div class = "col-md-100">
+    <table class = "table table-borderd">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Costo por unidad</th>
+                <th>tipo cultivo</th>
+                <th>eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            require('../conexion/conexion.php');
+            $query = "SELECT * FROM Hortaliza";
+            $result = mysqli_query($conn,$query);
+            
+            while($row = mysqli_fetch_array($result)){ ?>
+                <tr>
+                    <td><?php echo $row['nombre'] ?></td>
+                    <td><?php echo $row['costo_por_unidad'] ?></td>
+                    <td><?php echo $row['tipo_de_cultivo'] ?></td>
+                    <td>
+                        <a href="./borrarHortaliza.php?nombre= <?php echo $row['nombre']?>" class = "btn btn-danger">
+                            <i class = "fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            <?php  } ?>
+
+        </tbody>
+    </table>
+</div>
+</div>
+
 
 <?php include("../includes/footer.html") ?>

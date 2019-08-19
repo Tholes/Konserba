@@ -64,4 +64,38 @@
   </div>
 </form>
     </body>
+
+    <div class = "col-md-100">
+    <table class = "table table-borderd">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Costo por kilo</th>
+                <th>Calidad</th>
+                <th>eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            require('../conexion/conexion.php');
+            $query = "SELECT * FROM fruta";
+            $result = mysqli_query($conn,$query);
+            
+            while($row = mysqli_fetch_array($result)){ ?>
+                <tr>
+                    <td><?php echo $row['nombre'] ?></td>
+                    <td><?php echo $row['costo_por_kilo'] ?></td>
+                    <td><?php echo $row['calidad'] ?></td>
+                    <td>
+                        <a href="./borrarfruta.php?nombre= <?php echo $row['nombre']?>" class = "btn btn-danger">
+                            <i class = "fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            <?php  } ?>
+
+        </tbody>
+    </table>
+</div>
+
 <?php include("../includes/footer.html") ?>
