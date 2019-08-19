@@ -22,7 +22,7 @@
                     <br>
                     <h2>Hortaliza:</h2>
                     <select name='hortaliza'>
-                        <option ></option>
+                        <option></option>
                         <?php
                         require('conexion.php');
                         $aux=NULL;

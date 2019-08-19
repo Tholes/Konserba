@@ -1,9 +1,5 @@
 <?php
-$host='localhost';
-$user='root';
-$password='';
-$BDname='proyecto';
-$conn = mysqli_connect('$host', '$user', '$password' , '$BDname') or 
+$conn = mysqli_connect('localhost', 'root', '' , 'proyecto') or 
         die("Error al conectar a la DB " . mysqli_error($link));
 ?>
 
