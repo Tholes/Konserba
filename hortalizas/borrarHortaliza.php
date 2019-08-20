@@ -1,19 +1,18 @@
 <?php
 
-include("../conexion/conexion.php")
+require('../conexion/conexion.php');
 
-if(isset($_GET['nombre'])){
+if(isset($_GET['nombre'])) {
     $nombre = $_GET['nombre'];
-    $query = "DELETE FROM hortaliza where id = $id";
+    $query = "DELETE FROM hortaliza where nombre = '$nombre'";
     $result = mysqli_query($conn,$query);
 
-    if(!$ejecutar){
+    if(!$result){
         echo 'Hubo un error'
         . "<br><a href='./formhortaliza.php'>Volver</a>";
-    }else{
-        echo "Ingreso exitoso, puedes:"
-        . "<br><a href='./formhortaliza.php'>Ingresar otro encargo</a>"
-            ;
+    }
+    else{
+        header("Location: formhortaliza.php");
     }
 }   
 ?>

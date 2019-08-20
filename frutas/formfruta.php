@@ -2,10 +2,10 @@
 
     <body>
     <ul class="nav">
-            <li class="nav nav-pills">
+            <li class="nav-item">
                 <a class="nav-link active" href="../index.php" target ="info"><h4>Inicio</h4></a>
             </li>
-            <li class="nav-item">
+            <li class="nav nav-pills">
                 <a class="nav-link active" href="formfruta.php" target="info"><h4>Ingresar fruta</h4></a>
             </li>
             <li class="nav-item">
@@ -14,15 +14,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="../encargo/encargo.php" target="info"><h4>Solicitar encargo</h4></a>
             </li>
+            <li class="nav nav-pills">
+                <a class="nav-link" href="../consultas/consulta.php" target="info"><h4>Consultas</h4></a>
+            </li>
         </ul>
-    <div class="col-6 px-6">
+    <div class="col-5 px-6">
                 <div class="card">
                     <div class="card-header">
                         Insertar fruta
                     </div>
-        <div class="card-body">
+                <div class="card-body">
         <div class="form">
-        </div>
         <form action="formfrutap.php" method="POST">
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-8 col-form-label">Nombre de la fruta: </label>
@@ -62,10 +64,11 @@
   </div>
   </div>
   </div>
+  </div>
 </form>
     </body>
 
-    <div class = "col-md-100">
+    <div class = "col-md-8">
     <table class = "table table-borderd">
         <thead>
             <tr>
@@ -87,7 +90,7 @@
                     <td><?php echo $row['costo_por_kilo'] ?></td>
                     <td><?php echo $row['calidad'] ?></td>
                     <td>
-                        <a href="./borrarfruta.php?nombre= <?php echo $row['nombre']?>" class = "btn btn-danger">
+                        <a href="./borrarfruta.php?nombre=<?php echo $row['nombre']?>" class = "btn btn-danger">
                             <i class = "fas fa-trash"></i>
                         </a>
                     </td>

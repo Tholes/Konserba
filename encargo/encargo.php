@@ -4,17 +4,20 @@
 
     <body>
     <ul class="nav">
-            <li class="nav nav-pills">
-                <a class="nav-link active" href="../index.php" target ="info"><h4>Inicio</h4></a>
+            <li class="nav-item">
+                <a class="nav-link" href="../index.php" target ="info"><h4>Inicio</h4></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="../frutas/formfruta.php" target="info"><h4>Ingresar fruta</h4></a>
+                <a class="nav-link" href="../frutas/formfruta.php" target="info"><h4>Ingresar fruta</h4></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../hortalizas/formhortaliza.php" target="info"><h4>Ingresar hortaliza</h4></a>
             </li>
+            <li class="nav nav-pills">
+                <a class="nav-link active" href="encargo.php" target="info"><h4>Solicitar encargo</h4></a>
+            </li>
             <li class="nav-item">
-                <a class="nav-link" href="encargo.php" target="info"><h4>Solicitar encargo</h4></a>
+                <a class="nav-link" href="../consultas/consulta.php" target="info"><h4>Consultas</h4></a>
             </li>
         </ul>
         <div class="col-6 px-10">

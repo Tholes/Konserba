@@ -1,7 +1,7 @@
 <?php
 require('../conexion/conexion.php');
 
-$número_de_orden=$_POST['número_de_orden'];
+$número_de_orden=$_POST['numero_de_orden'];
 $fecha=$_POST['fecha'];
 $valor=$_POST['valor'];
 $guia=NULL;

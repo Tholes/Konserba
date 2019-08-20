@@ -3,18 +3,21 @@
 <?php include("../includes/header.html") ?>
   
     <body>
-    <ul class="nav">
+    <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link " href="../index.php" target ="info"><h4>Inicio</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="../frutas/formfruta.php" target="info"><h4>Ingresar fruta</h4></a>
+            </li>
             <li class="nav nav-pills">
-                <a class="nav-link active" href="../index.php" target ="info"><h4>Inicio</h4></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="../frutas/formfruta.php" target="info"><h4>Ingresar fruta</h4></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="formhortaliza.php" target="info"><h4>Ingresar hortaliza</h4></a>
+                <a class="nav-link active" href="formhortaliza.php" target="info"><h4>Ingresar hortaliza</h4></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../encargo/encargo.php" target="info"><h4>Solicitar encargo</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../consultas/consulta.php" target="info"><h4>consultas</h4></a>
             </li>
         </ul>
             <div class="col-5 px-6">
@@ -78,6 +81,7 @@
             </tr>
         </thead>
         <tbody>
+        <form action="borrarHortaliza.php" method="POST">
             <?php
             require('../conexion/conexion.php');
             $query = "SELECT * FROM Hortaliza";
@@ -85,7 +89,7 @@
             
             while($row = mysqli_fetch_array($result)){ ?>
                 <tr>
-                    <td><?php echo $row['nombre'] ?></td>
+                    <td name='nombre'><?php echo $row['nombre'] ?></td>
                     <td><?php echo $row['costo_por_unidad'] ?></td>
                     <td><?php echo $row['tipo_de_cultivo'] ?></td>
                     <td>
@@ -95,7 +99,7 @@
                     </td>
                 </tr>
             <?php  } ?>
-
+            </form>
         </tbody>
     </table>
 </div>
