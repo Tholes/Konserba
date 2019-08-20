@@ -95,3 +95,34 @@ CREATE TABLE Viaje (
 			 FOREIGN KEY fk_e1(número_de_guía_del_envío) REFERENCES Envío(número_de_guía),
 			 FOREIGN KEY fk_e2(matrícula_del_transporte) REFERENCES Vehículo(matrícula))
 INSERT INTO Viaje VALUES (1,'SPR123');
+
+--Consultas
+--1 Encargos vacíos.
+select * 
+from encargo
+where Fruta is NUll and Hortaliza is NULL;
+
+--2 fruta más encargada
+select nombre,calidad
+from fruta natural join (
+select fruta as nombre
+from encargo
+group by fruta
+having count(*) = (
+	select count(*)
+	from encargo
+	group by fruta
+	order by count(*) desc
+	limit 1
+) 
+) s;
+
+-- 3 Hortalizas con valor total en sus encargos menor o igual a 5000
+select nombre, tipo_de_cultivo
+from hortaliza natural join 
+(
+select hortaliza as nombre, sum(valor) as suma
+from encargo
+group by hortaliza
+having sum(valor) < 5000
+)a;

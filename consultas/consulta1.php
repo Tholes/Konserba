@@ -38,12 +38,50 @@
                             <a class="nav-link " href="./consulta2.php" target ="info"><h4>La fruta más encargada</h4></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="./consulta3.php" target ="info"><h4>La hortaliza más encargada</h4></a>
+                            <a class="nav-link " href="consulta3.php" target ="info"><h4>Encargos superiores a los 5000</h4></a>
                         </li>
 
                     </ul>
                 </div>
             </div>
+        </div>
+
+        <div class = "cold-md-8">
+            </body>
+            <div class = "col-md-8">
+            <table class = "table table-borderd">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Fecha</th>
+                        <th>Valor</th>
+                        <th>Guia</th>
+                        <th>Fruta </th>
+                        <th>Hortaliza</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    require('../conexion/conexion.php');
+                    $query = "select * 
+                            from encargo
+                            where Fruta is NUll and Hortaliza is NULL;";
+                    $result = mysqli_query($conn,$query);
+                    
+                    while($row = mysqli_fetch_array($result)){ ?>
+                        <tr>
+                            <td><?php echo $row['numero_de_orden'] ?></td>
+                            <td><?php echo $row['fecha'] ?></td>
+                            <td><?php echo $row['valor'] ?></td>
+                            <td><?php echo $row['numero_guia'] ?></td>
+                            <td><?php echo $row['fruta'] ?></td>
+                            <td><?php echo $row['hortaliza'] ?></td>
+                        </tr>
+                    <?php  } ?>
+
+                </tbody>
+            </table>
+</div>
         </div>
     </div>
 </div>

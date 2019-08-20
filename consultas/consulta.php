@@ -14,8 +14,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="../encargo/encargo.php" target="info"><h4>Solicitar encargo</h4></a>
             </li>
-            <li class="nav nav-pills">
-                <a class="nav-link active" href="consulta.php" target="info"><h4>Consultas</h4></a>
+            <li class="nav-item">
+                 <a class="nav-link " href="consulta3.php" target ="info"><h4>Encargos superiores a los 5000</h4></a>
             </li>
     </ul>
 </body>
